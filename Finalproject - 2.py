@@ -1,8 +1,3 @@
-"""
-File: pyramid.py
-----------------
-YOUR DESCRIPTION HERE
-"""
 
 import tkinter
 import time
@@ -67,8 +62,6 @@ def main():
         obstacle_bottom_start_y = obstacle_top_end_y + 100
         obstacle_bottom_end_y = CANVAS_HEIGHT
 
-        #y_point = random.randint(200, 500)
-
         # the speed with which the poles move towards the player
         obstacle_speed = 15
 
@@ -80,23 +73,12 @@ def main():
         canvas.move(obstacle_top, -1 * obstacle_speed, 0)
         canvas.move(obstacle_bottom, -1 * obstacle_speed, 0)
 
-
-
-        """
-        if canvas.coords(obstacle_top)[0] > CANVAS_WIDTH / 2:
-            obstacle_top = canvas.create_rectangle(CANVAS_WIDTH - OBSTACLE_WIDTH, obstacle_top_start_y, CANVAS_WIDTH, obstacle_top_end_y, fill="olive")
-            obstacle_bottom = canvas.create_rectangle(CANVAS_WIDTH - OBSTACLE_WIDTH, obstacle_bottom_start_y, CANVAS_WIDTH, obstacle_bottom_end_y, fill="olive")
-            canvas.move(obstacle_top, -1 * obstacle_speed, 0)
-            canvas.move(obstacle_bottom, -1 * obstacle_speed, 0)
-            canvas.update()
-        """
         # the poles on reaching the left wall and successfully getting crossed by the player, get deleted
         if hit_left_wall(obstacle_top, canvas):
             canvas.delete(obstacle_top)
             canvas.delete(obstacle_bottom)
 
-            #score = canvas.create_text(50, 50, font='Arial 15', text='Score:  ' + str(count))
-            # the score increases by one if one obstacle is crossed successfully6
+            # the score increases by one if one obstacle is crossed successfully
             count += 1
             # next pair of obstacle is created and run
             obstacle_top = canvas.create_rectangle(CANVAS_WIDTH - OBSTACLE_WIDTH, obstacle_top_start_y, CANVAS_WIDTH, obstacle_top_end_y, fill="olive")
